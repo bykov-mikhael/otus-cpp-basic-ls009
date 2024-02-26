@@ -1,6 +1,6 @@
 message("Проверка версии cmake...")
 cmake_minimum_required(VERSION 3.20)
-project(hw-009
+project(server
         VERSION 1.0
         LANGUAGES CXX)
 
@@ -9,10 +9,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS        OFF)
 
 message("Создание исполняемого файла...")
-add_executable(hw-009 src/main.cpp)
+add_executable(server src/main.cpp)
 
 find_package(Boost REQUIRED COMPONENTS)
-target_link_libraries(hw-009 PRIVATE Boost::boost)
+target_link_libraries(server PRIVATE Boost::boost)
 
 message("Устанавливаем флаги компилятора...")
 set(CMAKE_CXX_FLAGS "-Wall -Werror -pedantic -fsanitize=address -fsanitize=undefined")
